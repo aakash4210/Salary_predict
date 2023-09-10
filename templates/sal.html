@@ -1,0 +1,60 @@
+<html>
+	<style> 
+		input[type=text] {
+		  width: 20%;
+		  padding: 12px 10px;
+		  margin: 8px 0;
+		  box-sizing: border-box;
+		  border: none;
+		  background-color: #3CBC8D;
+		  color: white;
+		}
+		label{
+			font-size: 1.875em;
+		
+		}
+		</style>
+<body>
+    <div class="login">
+       <h1>salary prediction</h1>
+
+	<form action="{{ url_for('predicpackage')}}" method="post">
+    	<label for="fname">first Name:</label>
+    	<input type="text" name="fname"><br><br>
+
+    	<label for="lname">Last Name:</label>
+    	<input type="text" name="lname"><br><br>
+
+    	<label for="Type">Type:</label>
+    	<input type="radio" name="Fresher" id="Fresher" value="Fresher">
+    	<label for="male">Fresher</label>
+
+   		<input type="radio" name="experienced" id="experienced" value="experienced">
+   		<label for="female">experienced</label> <br><br>
+
+    	<label for="yearE">Number of year Exprienced:</label>
+    	<input type="text" name="yearE"><br><br>
+
+  	  	<label for="Company">Previous Company you worked: </label>
+  	  	<select name="Company" id="Company">
+   	    	 <option>Select an option</option>
+   	    	 <option value="Fresher">Fresher</option>
+   	    	 <option value="Atos">Atos</option>
+   	     	<option value="TCS">TCS</option>
+ 		</select><br><br>
+    
+    
+
+
+   		<button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+	</form>
+
+
+     
+    <h2 style=background-color:tomato;>
+	   Hi {{fname}} <br>
+       Your salary prediction is {{result}} RS <br><br>
+	   Have Nice day 
+    </h2>
+<body>
+</html>
