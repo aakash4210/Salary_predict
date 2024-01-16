@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #3CBC8D;
+            font-size: 2.5em;
+        }
+
+        label {
+            font-size: 1.2em;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        input[type="text"],
+        input[type="radio"],
+        select {
+            width: 100%;
+            padding: 12px 10px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        button {
+            background-color: #3CBC8D;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2E9D77;
+        }
+
+        h2 {
+            background-color: #E94E77;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            font-size: 1.5em;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Salary Prediction</h1>
+        <form action="{{ url_for('predicpackage')}}" method="post">
+            <label for="fname">First Name:</label>
+            <input type="text" name="fname">
+
+            <label for="lname">Last Name:</label>
+            <input type="text" name="lname">
+
+            <label for="yearE">Number of Years Experienced:</label>
+            <input type="text" name="yearE">
+
+            <label for="Company">Previous Company You Worked:</label>
+            <select name="Company" id="Company">
+                <option value="" disabled selected>Select an option</option>
+                <option value="Fresher">Fresher</option>
+                <option value="Atos">Atos</option>
+                <option value="TCS">TCS</option>
+            </select>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        <h2>
+            Hi <span id="fnamePlaceholder"></span> <br>
+            Your salary prediction is <span id="resultPlaceholder"></span> RS <br><br>
+            Have a Nice Day
+        </h2>
+    </div>
+</body>
+</html>
